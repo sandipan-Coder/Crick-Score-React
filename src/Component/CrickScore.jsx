@@ -12,16 +12,16 @@ const CrickScore = () => {
       const response = await fetch("https://api.cricapi.com/v1/cricScore?apikey=66a50c14-e33e-49af-aca2-8a477f1d78f6");
 
       const data = await response.json();
-      console.log(data);
+      // console.log(data);
       setData(data.data);
 
     } catch (error) {
-    console.log(error);
+      console.log(error);
     }
   }
 
   useEffect(() => {
-      getData();
+    getData();
   }, []);
 
   const handleInput = (e) => {
@@ -40,8 +40,8 @@ const CrickScore = () => {
         <h4>CrickScore</h4>
       </div>
       <div className="searchBar">
-        <input type="text" placeholder="Search Match, series" onChange={handleInput}/>
-        <button onClick={handleButton}>Search</button>
+        <input type="text" placeholder="Search Match, series" onChange={ handleInput }/>
+        <button onClick={ handleButton }>Search</button>
       </div>
       
       <div className="heading">
