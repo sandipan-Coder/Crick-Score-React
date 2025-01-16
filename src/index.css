@@ -6,6 +6,9 @@
   box-sizing: border-box;
   font-family: "Poppins", serif;
 }
+.main-container{
+  background-color: #00ffa2;
+}
 .company{
   display: flex;
   justify-content: start;
@@ -17,7 +20,8 @@
 .company h4{
   font-size: 35px;
   font-weight: 600;
-  color: rgb(126, 126, 197);
+  /* color: rgb(126, 126, 197); */
+  color: #05499d;
 }
 .searchBar{
   display: flex;
@@ -47,8 +51,9 @@
 .heading{
   text-align: center;
   font-size: 30px;
-  font-weight: 500;
+  font-weight: 650;
   margin-top: 20px;
+  color: #043b7e;
 }
 .container{
   display: flex;

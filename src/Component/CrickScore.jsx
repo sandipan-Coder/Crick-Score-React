@@ -12,7 +12,7 @@ const CrickScore = () => {
       const response = await fetch("https://api.cricapi.com/v1/cricScore?apikey=66a50c14-e33e-49af-aca2-8a477f1d78f6");
 
       const data = await response.json();
-      // console.log(data);
+      console.log(data);
       setData(data.data);
 
     } catch (error) {
