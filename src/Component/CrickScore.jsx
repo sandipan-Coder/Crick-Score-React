@@ -6,17 +6,21 @@ const CrickScore = () => {
   const [data, setData] = useState([]);
   const [inputData, setInputData] = useState();
   const [searchData, setSearchData] = useState("");
+  const [loading, setLoading] = useState(true);
 
   const getData = async () => {
     try {
       const response = await fetch("https://api.cricapi.com/v1/cricScore?apikey=66a50c14-e33e-49af-aca2-8a477f1d78f6");
 
       const data = await response.json();
-      console.log(data);
+      // console.log(data);
       setData(data.data);
+      setLoading(false);
 
     } catch (error) {
       console.log(error);
+      setLoading(false);
+      alert("There is something wrong: ", error);
     }
   }
 
@@ -31,6 +35,27 @@ const CrickScore = () => {
   const handleButton = () => {
     setSearchData(inputData);
     getData();
+  }
+
+  if(loading){
+    return(
+      <>
+        <div className="company">
+          <img src={logo}/>
+          <h4>CrickScore</h4>
+        </div>
+        <div className="searchBar">
+          <input type="text" placeholder="Search Match, series" onChange={ handleInput }/>
+          <button onClick={ handleButton }>Search</button>
+        </div>
+      
+        <div className="heading">
+          <p>Live Cricket Score App</p>
+        </div>
+
+        <h3 className='loading'>Loading..................</h3>
+      </>
+    )
   }
 
   return (
